@@ -87,8 +87,11 @@ export function AppointmentCreate() {
 								
 								{
 									guild.icon 
-									? <GuildIcon /> 
-									: <View style={styles.image} />
+									? 	<GuildIcon 
+											guildID={guild.id}
+											iconID={guild.icon}
+										/> 
+									: 	<View style={styles.image} />
 								}
 
 								<View style={styles.selectBody}>
