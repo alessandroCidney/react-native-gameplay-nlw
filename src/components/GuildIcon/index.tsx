@@ -22,7 +22,7 @@ export function GuildIcon({ guildID, iconID }: GuildIconPropsType) {
 	return (
 		<View style={styles.container}>
 			{
-				iconId 
+				iconID 
 				?	<Image 
 						source={{uri}}
 						style={styles.image}
