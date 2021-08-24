@@ -276,3 +276,52 @@ LogBox.ignoreLogs(["You are not currently signed in to Expo on your development 
 	plugins: ["inline-dotenv"]
 }
 ```
+
+## ActivityIndicator
+- Componente que insere o clássico símbolo de carregamento de círculo
+- É possível definir a cor dele através da propriedade `color`
+
+## Async Storage
+- API para armazenamento local no dispositivo do usuário
+- Para instalar utilizando o Expo, use `expo install @react-native-async-storage/async-storage`
+- Baseado em chave-valor, semelhante ao JSON
+
+
+### Salvando valores
+
+```javascript
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+async function something() {
+	AsyncStorage.setItem('nome-da-colecao', 'string')
+}
+```
+
+- Você também pode salvar objetos através de JSON.stringify()
+
+```javascript
+async function something() {
+	AsyncStorage.setItem('nome-da-colecao', JSON.stringify({
+		message: 'Eu sou um objeto!'
+	}));
+}
+```
+
+### Recuperando valores
+
+```javascript
+async function something() {
+	const results = await AsyncStorage.getItem('nome-da-colecao');
+}
+
+```
+
+- Use `JSON.parse` para converter objetos armazenados
+
+```javascript
+async function something() {
+	const results = await AsyncStorage.getItem('nome-da-colecao');
+
+	const parsed = JSON.parse(results);
+}
+```

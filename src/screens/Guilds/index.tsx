@@ -14,44 +14,7 @@ type Props = {
 
 export function Guilds({ handleGuildSelect }: Props) {
 
-	const guilds = [
-		{
-			id: '1',
-			name: 'Lendários',
-			icon: 'lendariosimage.png',
-			owner: true
-		},
-		{
-			id: '2',
-			name: 'Incríveis',
-			icon: 'incriveisguild.png',
-			owner: true
-		},
-		{
-			id: '3',
-			name: 'Incríveis',
-			icon: 'incriveisguild.png',
-			owner: true
-		},
-		{
-			id: '4',
-			name: 'Potatoes',
-			icon: 'incriveisguild.png',
-			owner: true
-		},
-		{
-			id: '5',
-			name: 'Potatoes',
-			icon: 'incriveisguild.png',
-			owner: true
-		},
-		{
-			id: '6',
-			name: 'Potatoes',
-			icon: 'incriveisguild.png',
-			owner: true
-		}
-	];
+	const [guilds, setGuilds] = useState<GuildDataType[]>([]);
 
 	return (
 		<View style={styles.container}>
