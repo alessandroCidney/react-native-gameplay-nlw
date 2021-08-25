@@ -325,3 +325,12 @@ async function something() {
 	const parsed = JSON.parse(results);
 }
 ```
+
+## UUID
+- Para usar uuids no React Native, instale a biblioteca com `yarn add react-native-uuid`
+
+```javascript
+import uuid from 'react-native-uuid';
+
+const id = uuid.v4();
+```

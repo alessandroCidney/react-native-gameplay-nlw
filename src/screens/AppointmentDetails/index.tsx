@@ -1,6 +1,8 @@
 import React from 'react';
 import { ImageBackground, Text, View, FlatList } from 'react-native';
 
+import { useRoute } from '@react-navigation/native';
+
 import { Fontisto } from '@expo/vector-icons';
 import { BorderlessButton } from 'react-native-gesture-handler';
 
@@ -11,12 +13,22 @@ import { Member } from '../../components/Member';
 import { ListDivider } from '../../components/ListDivider';
 import { ButtonIcon } from '../../components/ButtonIcon';
 
+import { AppointmentsItemType } from '../../components/Appointment';
+
 import { styles } from './styles';
 import { theme } from '../../global/styles/theme';
 
 import BannerImg from '../../assets/banner.png';
 
+type Params = {
+	guildSelected: AppointmentsItemType;
+}
+
 export function AppointmentDetails() {
+
+	const route = useRoute();
+
+	const { guildSelected } = route.params as Params;
 
 	const { primary } = theme.colors;
 

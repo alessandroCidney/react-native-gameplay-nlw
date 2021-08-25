@@ -43,7 +43,10 @@ export function Appointment({ data, ...rest }: AppointmentPropsType) {
 					style={styles.guildIconContainer}
 					colors={[secondary50, secondary70]}
 				>
-					<GuildIcon />
+					<GuildIcon 
+						guildID={data.guild.id}
+						iconID={data.guild.icon}
+					/>
 				</LinearGradient>
 
 				<View style={styles.content}>
