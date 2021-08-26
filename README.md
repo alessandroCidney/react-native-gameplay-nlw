@@ -334,3 +334,41 @@ import uuid from 'react-native-uuid';
 
 const id = uuid.v4();
 ```
+
+## Hook useCallback
+- Evita que uma função seja renderizada desnecessariamente
+
+## Share
+- Componente do React Native (API) para que possamos lidar com compartilhamento
+
+Exemplo de função do projeto que utiliza o Share:
+
+```javascript
+function handleShareInvitation() {
+	/**
+	 * Se o sistema operacional for iOS, a string será a mensagem compartilhada
+	 * Se o sistema operacional for outro, o instant_invite será a mensagem compartilhada*/
+	const message = Platform.OS === 'ios' 
+	? `Junte-se a ${guildSelected.guild.name}`
+	: widget.instant_invite;
+
+	Share.share({
+		message,
+		url: widget.instant_invite
+	})
+}
+```
+
+## Linking
+- Componente do Expo para lidar com redirecionamento
+
+Exemplo de função com Linking utilizada no projeto:
+
+```javascript
+import * as Linking from 'expo-linking';
+
+function handleOpenGuild() {
+	Linking.openURL(widget.instant_invite);
+}
+
+```
