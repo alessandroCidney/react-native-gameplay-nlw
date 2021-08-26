@@ -89,9 +89,9 @@ export function AppointmentDetails() {
 		: widget.instant_invite;
 
 		Share.share({
-			message,
+			message: message,
 			url: widget.instant_invite
-		})
+		});
 
 		// O botão de compartilhar só aparecerá se o usuário for o dono do servidor
 	}
@@ -126,7 +126,7 @@ export function AppointmentDetails() {
 					</Text>
 
 					<Text style={styles.subtitle}>
-						{ guildSelected.guild.description }
+						{ guildSelected.description }
 					</Text>
 				</View>	
 			</ImageBackground>
